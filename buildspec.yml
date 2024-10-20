@@ -6,7 +6,9 @@ phases:
       nodejs: 23  
     commands:  
       - echo "Installing NPM dependencies including MongoDB..."  
-      - npm install  
+      - npm install
+      - npm init -y
+      - npm install express mongoose body-parser cors dotenv
   
   build:  
     commands:  
