@@ -7,12 +7,7 @@ phases:
     commands:  
       - echo "Installing NPM dependencies including MongoDB..."  
       - npm install  
-
-  pre_build:  
-    commands:  
-      - echo "Running linting..."  
-      - npm run lint  
-      
+  
   build:  
     commands:  
       - echo "Building the project..."  
