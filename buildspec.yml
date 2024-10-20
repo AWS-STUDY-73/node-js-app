@@ -1,0 +1,34 @@
+version: 0.2  
+
+phases:  
+  install:  
+    runtime-versions:  
+      nodejs: 23  
+    commands:  
+      - echo "Installing NPM dependencies including MongoDB..."  
+      - npm install  
+
+  pre_build:  
+    commands:  
+      - echo "Running linting..."  
+      - npm run lint  
+      
+  build:  
+    commands:  
+      - echo "Building the project..."  
+      - npm run build  
+      
+  post_build:  
+    commands:  
+      - echo "Running tests..."  
+      - npm test  
+
+artifacts:  
+  files:  
+    - '**/*'  
+    - '!node_modules/**'  
+  base-directory: build  
+
+cache:  
+  paths:  
+    - node_modules/**
